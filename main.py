@@ -40,7 +40,7 @@ def main(config):
         js_client = JellyseerrClient(
             server_url=config['jellyseerr']['server_url'],
             api_key=config['jellyseerr'].get('api_key', None),
-            email=config['jellyseerr'].get('username', None),
+            username=config['jellyseerr'].get('username', None),
             password=str(config['jellyseerr'].get('password', None)),
             user_type=str(config['jellyseerr'].get('user_type', "local"))
         )
