@@ -3,7 +3,7 @@ import urllib.parse
 from loguru import logger
 
 class JellyseerrClient:
-    def __init__(self, server_url: str, api_key:str=None, email: str=None, password: str=None, user_type: str="local"):
+    def __init__(self, server_url: str, api_key: str=None, username: str=None, password: str=None, user_type: str="local"):
         # Fix common url issues
         if server_url.endswith("/"):
             server_url = server_url[:-1]  # Remove trailing slash 
@@ -30,13 +30,13 @@ class JellyseerrClient:
             })
             if r.status_code != 200:
                 raise Exception("Invalid jellyseerr API Key")
-        if email is not None and password is not None:
+        if username is not None and password is not None:
             r = self.session.post(f"{self.server_url}/auth/{user_type}", json={
-                "email": email,
+                "username": username,
                 "password": password
             })
             if r.status_code != 200:
-                raise Exception("Invalid jellyseerr email or password")
+                raise Exception("Invalid jellyseerr unsername or password")
 
         # Check if user is authenticated
         r = self.session.get(f"{self.server_url}/auth/me")
