@@ -61,7 +61,7 @@ Then run `python main.py`.
 
 ### Docker
 
-The easiest way to get going is to use the provided `docker-compose.yml` configuration. Whatever directory you end up mapping to the `/app/config` directory needs to contain your updated `config.yaml` file:
+The  easiest way to get going is to use the provided `docker-compose.yml` configuration. Whatever directory you end up mapping to the `/app/config` directory needs to contain your updated `config.yaml` file:
 
 ```yaml
 services:
